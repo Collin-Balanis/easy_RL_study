@@ -33,8 +33,16 @@ _**collin**_
 
 $$V_{\pi}(s) \doteq \mathbb{E}_{\pi}\left[G_{t} \mid s_{t}=s\right]=\mathbb{E}_{\pi}\left[\sum_{k=0}^{\infty} \gamma^{k} r_{t+k+1} \mid s_{t}=s\right],\text{对于所有的} s \in S$$
 
-我们还有一种价值函数：Q 函数。
+还有一种价值函数：Q 函数。
 
 $$Q_{\pi}(s, a) \doteq \mathbb{E}{\pi}\left[G{t} \mid s_{t}=s, a_{t}=a\right]=\mathbb{E}{\pi}\left[\sum{k=0}^{\infty} \gamma^{k} r_{t+k+1} \mid s_{t}=s, a_{t}=a\right]$$
 
 * **模型** 表示智能体对环境状态的理解
+
+下一步的状态取决于当前的状态以及当前采取的动作。
+它由状态转移概率和奖励函数两个部分组成。状态转移概率即
+$$p_{s s^{\prime}}^{a}=p\left(s_{t+1}=s^{\prime} \mid s_{t}=s, a_{t}=a\right)$$
+奖励函数是指我们在当前状态采取了某个动作，可以得到多大的奖励，即 
+$$R(s,a)=\mathbb{E}\left[r_{t+1} \mid s_{t}=s, a_{t}=a\right]$$
+当我们有了策略、价值函数和模型3个组成部分后，就形成了一个**马尔可夫决策过程（Markov decision process）。**
+
